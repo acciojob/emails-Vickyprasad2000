@@ -27,7 +27,7 @@ public class Email {
 
             if(validPass)
             {
-                this.password = password;
+                this.password = newPassword;
             }
         }
         //Change password only if the oldPassword is equal to current password and the new password meets all of the following:
