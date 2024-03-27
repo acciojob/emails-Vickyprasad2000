@@ -39,29 +39,26 @@ public class Email {
     }
     public boolean validatePass(String newPassword)
     {
-        int up = 0, lc = 0, di = 0, sp = 0;
-//        if(newPassword.length()>=8)
-//        {
+        boolean up = false, lc = false, di = false, sp = false;
+
             char[] nP = newPassword.toCharArray();
-//            int up = 0, lc = 0, di = 0, sp = 0;
             for (char ch : nP)
             {
                 if(ch >= 'A' && ch <= 'Z')
                 {
-                    up++;
+                    up=!(up);
                 } else if (ch >= 'a' && ch <= 'z') 
                 {
-                    lc++;
+                    lc=!(lc);
                 } else if (ch >= '0' && ch <= '9') 
                 {
-                    di++;    
+                    di=!(di);
                 }
                 else
                 {
-                    sp++;
+                    sp=!(sp);
                 }
             }
-//        }
-        return up>0 && lc>0 && di>0 && sp>0 && newPassword.length()>=8;
+        return up && lc && di && sp && newPassword.length()>=8;
     }
 }
